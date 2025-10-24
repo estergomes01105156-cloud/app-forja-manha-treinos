@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    overflow: fixed;
+}
+
 nav{
     position: fixed;
     top: 0;
@@ -17,7 +21,20 @@ nav{
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.466);
+    z-index: 999;
+    animation: fromTop 2s ease-in-out;
 }
+
+@keyframes fromTop{
+    0%{
+        transform: translateY(-70px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
 .wrap-img{
     width: 30%;
     height: 100%;
@@ -61,14 +78,40 @@ nav{
 }
 
 .left{
-    width: 50%;
+    width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fromLeft 2s ease-in-out;
+}
+
+@keyframes fromLeft{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 .right{
     width: 400px;
+    animation: fromRight 2ms ease-in-out;
+}
+
+@keyframes fromRight{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+
+    }
+    
 }
 
 .wrap-banner{
@@ -96,19 +139,67 @@ nav{
 }
 
 .right p{
-    font-size: 18px;
-    width: 100;
+    width: 500px;
 }
 
 #s2{
     min-height: 100vh;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: content;
+    gap: 4vh;
+}
+.wrap-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.card{
+    width: 400px;
+    padding: 50px;
+    border: 3px solid #090909;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img{
+    margin-bottom: 20px;
+    transition: all 200ms linear;
+    border-radius: 16px;
+}
+
+.card:hover img{
+    transform: scale(1.2);
 }
 
 #s3{
     min-height: 100vh;
-    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
 }
+
+#s3 iframe{
+    width: 768px;
+    height: 430px;
+}
+
+.wrap-video{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 #s4{
     min-height: 100vh;
@@ -150,4 +241,18 @@ nav{
         width: 250px;
         height: 250px;
     }
+
+    #s3{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
+}
+
+#s3 iframe{
+        width: 100%;
+    }
+
 }
